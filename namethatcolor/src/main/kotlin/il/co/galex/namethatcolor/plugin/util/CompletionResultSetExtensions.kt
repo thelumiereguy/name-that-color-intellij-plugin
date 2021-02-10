@@ -8,7 +8,11 @@ import il.co.galex.namethatcolor.core.model.HexColor
 import il.co.galex.namethatcolor.core.util.toKotlinName
 import il.co.galex.namethatcolor.core.util.toXmlName
 
-inline fun CompletionResultSet.addElement(message: String, clipboard: String, find: (color: HexColor) -> Pair<HexColor, Color>) {
+inline fun CompletionResultSet.addElement(
+    message: String,
+    clipboard: String,
+    find: (color: HexColor) -> Pair<HexColor, Color>
+) {
 
     try {
         val (hexColor, color) = find(HexColor(clipboard))
@@ -23,7 +27,11 @@ inline fun CompletionResultSet.addElement(message: String, clipboard: String, fi
     }
 }
 
-inline fun CompletionResultSet.addKotlinElement(message: String, clipboard: String, find: (color: HexColor) -> Pair<HexColor, Color>) {
+inline fun CompletionResultSet.addKotlinElement(
+    message: String,
+    clipboard: String,
+    find: (color: HexColor) -> Pair<HexColor, Color>
+) {
 
     try {
         val (hexColor, color) = find(HexColor(clipboard))

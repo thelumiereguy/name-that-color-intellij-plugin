@@ -21,15 +21,15 @@ class ColorAnnotator : Annotator {
 
                 // color list from name that color
                 holder.newAnnotation(HighlightSeverity.ERROR, COLOR_ANNOTATION_MESSAGE)
-                        .newFix(NameColorIntention(NAME_THAT_COLOR, color, ColorNameFinder::findColor))
-                        .registerFix()
-                        .create()
+                    .newFix(NameColorIntention(NAME_THAT_COLOR, color, ColorNameFinder::findColor))
+                    .registerFix()
+                    .create()
 
                 // material color palette
                 holder.newAnnotation(HighlightSeverity.ERROR, MATERIAL_COLOR_ANNOTATION_MESSAGE)
-                        .newFix(NameColorIntention(NAME_THAT_MATERIAL_COLOR, color, ColorNameFinder::findMaterialColor))
-                        .registerFix()
-                        .create()
+                    .newFix(NameColorIntention(NAME_THAT_MATERIAL_COLOR, color, ColorNameFinder::findMaterialColor))
+                    .registerFix()
+                    .create()
             }
         } catch (e: Exception) {
             // found that a color is not valid for us, ignoring it
