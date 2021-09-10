@@ -5,7 +5,7 @@ import il.co.galex.namethatcolor.core.util.rgb
 import il.co.galex.namethatcolor.core.util.roundTo2Decimal
 import il.co.galex.namethatcolor.core.util.roundTo2HexString
 
-class HexColor(val input: String) {
+data class HexColor(val input: String) {
 
     private var alpha: String? = null
     private var hasPercent = false
@@ -60,7 +60,7 @@ class HexColor(val input: String) {
                 this.alpha = cup.substring(0, 2)
             }
 
-            else -> throw IllegalArgumentException("Length is weird")
+            else -> throw IllegalArgumentException("Length is weird '${input}'")
         }
         // if we survived till here, let's now check the format of the value itself
         if (!VALUE_REGEX.matches(value)) {

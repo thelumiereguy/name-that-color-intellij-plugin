@@ -7,6 +7,8 @@ import com.intellij.psi.xml.XmlToken
 
 const val NAME_THAT_COLOR = "Name that color"
 const val NAME_THAT_MATERIAL_COLOR = "Name that material color"
+const val NAME_7_SEVEN_BRIGHT_SHADES = "Name 7 bright shades"
+const val NAME_7_SEVEN_DARK_SHADES = "Name 7 dark shades"
 
 const val COLOR_ANNOTATION_MESSAGE = "Convert this automatically to an XML color tag named from a large set of colors"
 const val MATERIAL_COLOR_ANNOTATION_MESSAGE = "Convert this automatically to an XML color tag named as a Material Color"

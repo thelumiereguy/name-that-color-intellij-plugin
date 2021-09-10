@@ -8,7 +8,11 @@ import il.co.galex.namethatcolor.core.model.HexColor
 import il.co.galex.namethatcolor.core.util.toKotlinName
 import il.co.galex.namethatcolor.core.util.toXmlName
 
-inline fun CompletionResultSet.addElement(message: String, clipboard: String, find: (color: HexColor) -> Pair<HexColor, Color>) {
+inline fun CompletionResultSet.addElement(
+    message: String,
+    clipboard: String,
+    find: (color: HexColor) -> Pair<HexColor, Color>
+) {
 
     try {
         val (hexColor, color) = find(HexColor(clipboard))
@@ -23,12 +27,36 @@ inline fun CompletionResultSet.addElement(message: String, clipboard: String, fi
     }
 }
 
-inline fun CompletionResultSet.addKotlinElement(message: String, clipboard: String, find: (color: HexColor) -> Pair<HexColor, Color>) {
+inline fun CompletionResultSet.addKotlinElement(
+    message: String,
+    clipboard: String,
+    find: (color: HexColor) -> Pair<HexColor, Color>
+) {
 
     try {
         val (hexColor, color) = find(HexColor(clipboard))
         val name = color.name.toKotlinName(hexColor.percentAlpha)
         val insert = kotlinOutput(name, hexColor.toString())
+        addElement(LookupElementBuilder.create(insert).withPresentableText(message))
+
+    } catch (e: ColorNotFoundException) {
+        println(e.localizedMessage)
+    } catch (e: IllegalArgumentException) {
+        println(e.localizedMessage)
+    }
+}
+
+inline fun CompletionResultSet.addMultipleKotlinElements(
+    message: String,
+    clipboard: String,
+    find: (color: HexColor) -> Triple<HexColor, Color, List<HexColor>>
+) {
+
+    try {
+        val (hexColor, color, shades) = find(HexColor(clipboard))
+        val name = color.name.toKotlinName(hexColor.percentAlpha)
+        val isDarkColor = message == NAME_7_SEVEN_DARK_SHADES
+        val insert = kotlinOutputs(name, shades, isDarkColor)
         addElement(LookupElementBuilder.create(insert).withPresentableText(message))
 
     } catch (e: ColorNotFoundException) {
