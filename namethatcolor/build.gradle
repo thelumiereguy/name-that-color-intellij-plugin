@@ -26,6 +26,6 @@ intellij {
 }*/
 
 patchPluginXml {
-    version "1.7.2"
+    version "1.7.3"
     sinceBuild '201.6668.113'
 }

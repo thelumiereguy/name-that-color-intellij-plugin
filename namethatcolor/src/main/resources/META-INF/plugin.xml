@@ -1,8 +1,8 @@
 <idea-plugin>
     <id>il.co.galex.namethatcolor</id>
     <name>Name That Color</name>
-    <version>1.7.1</version>
-    <vendor email="alexandre.gherschon@gmail.com" url="http://galex.co.il/namethatcolor">Alexander Gherschon</vendor>
+    <version>1.7.3</version>
+    <vendor email="theapache64@gmail.com" url="http://github.com/theapache64/name-that-color-intellij-plugin">theapache64</vendor>
 
     <description><![CDATA[
       Name the color you have in your clipboard directly inside your color resource file in Android Studio.<br>
