@@ -1,5 +1,7 @@
 # Name That Color - Android Studio Plugin
 
+![](demo.gif)
+
 ## Introduction
 
 When I get a new color to set in my Android app, I never know how to call it. 
