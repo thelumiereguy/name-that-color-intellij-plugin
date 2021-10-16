@@ -22,7 +22,7 @@ intellij {
 }
 
 publishPlugin {
-    token pluginsDevToken
+    token "yourPublishTokenGoesHere"
 }
 
 patchPluginXml {
